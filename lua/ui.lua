@@ -2,6 +2,14 @@ local M = {
 	enable_bubbles_theme = 1,
 }
 
+local function setup_scrollbar()
+	vim.pack.add({ 'https://github.com/petertriho/nvim-scrollbar' })
+
+	require('scrollbar').setup({
+		show_in_active_only = true,
+	})
+end
+
 local function setup_animations()
 	vim.pack.add({ 'https://github.com/nvim-mini/mini.animate' })
 
@@ -51,6 +59,7 @@ function M.setup()
 	setup_barbecue()
 	setup_indent_blankline()
 	setup_lualine()
+	setup_scrollbar()
 end
 
 return M
