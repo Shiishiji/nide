@@ -23,8 +23,24 @@ local function setup_blinkcmp()
 	})
 end
 
+-- Show function signature when you type
+-- Toggle with Ctrl+l in insert mode
+local function setup_lsp_signature()
+	vim.pack.add({ "https://github.com/ray-x/lsp_signature.nvim" })
+
+	local l = require('lsp_signature')
+	l.setup({
+		bind = true,
+		toggle_key = '<C-l>',
+		handler_opts = {
+			border = "rounded"
+		}
+	})
+end
+
 function M.setup()
 	setup_blinkcmp()
+	setup_lsp_signature()
 end
 
 return M
