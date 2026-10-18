@@ -13,6 +13,12 @@ function M.setup()
 
 	vim.opt.termguicolors = true
 
+	-- maps for easier navigation
+	vim.keymap.set('n', '<C-h>', '<cmd>wincmd h<cr>')
+	vim.keymap.set('n', '<C-j>', '<cmd>wincmd j<cr>')
+	vim.keymap.set('n', '<C-k>', '<cmd>wincmd k<cr>')
+	vim.keymap.set('n', '<C-l>', '<cmd>wincmd l<cr>')
+
 	local augroup = vim.api.nvim_create_augroup
 	local autocmd = vim.api.nvim_create_autocmd
 
